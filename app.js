@@ -10,7 +10,7 @@ config.password = config.password || "supersecret";
 // Serve the public folder statically
 app.use(express.static(path.join(__dirname, 'public')));
 
-var server_port = config.port;
+var server_port = process.env.PORT || config.port;
 http.listen(server_port, "0.0.0.0", () => {
   console.log(`app running at port ${server_port}`);
 });
