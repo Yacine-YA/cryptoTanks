@@ -11,11 +11,11 @@ config.password = config.password || "supersecret";
 app.use(express.static(path.join(__dirname, 'public')));
 
 var server_port = config.port;
-http.listen(server_port, function(){
-  console.log('listening on : ' + server_port);
+http.listen(server_port, "0.0.0.0", () => {
+  console.log(`app running at port ${server_port}`);
 });
 
-// Create the game server
+// Create the game serve  | 
 
 var GameServer = require('./server/server.js');
 
