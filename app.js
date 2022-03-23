@@ -11,7 +11,7 @@ config.password = config.password || "supersecret";
 app.use(express.static(path.join(__dirname, 'public')));
 
 var server_port = config.port;
-http.listen(server_port, "0.0.0.0", () => {
+http.listen(server_port, "localhost", () => {
   console.log(`app running at port ${server_port}`);
 });
 
